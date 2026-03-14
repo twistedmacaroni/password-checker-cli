@@ -38,7 +38,7 @@ public class Password {
         if (password.length() >= 8) {
             score++;
         } else {
-            System.out.println("- Increase password length");
+            System.out.println("- Increase password length (recommended: 12+ characters)");
             hasSuggestions = true;
         }
 
