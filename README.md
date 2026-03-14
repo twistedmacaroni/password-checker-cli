@@ -1,96 +1,88 @@
 # CLI Password Strength Checker (Java)
 
-A small command-line tool written in Java that checks how strong a
-password is and suggests ways to improve it.
+A small command-line tool that checks how strong a password is and suggests ways to improve it.
 
-I built this while learning Java to practice working with strings,
-loops, conditionals, and basic object-oriented design.
+Built while learning Java — good practice for strings, loops, conditionals, and basic OOP.
 
-The program analyzes a password based on a few simple rules like length
-and character variety, then prints a strength rating along with
-suggestions if something is missing.
+---
 
-------------------------------------------------------------------------
+## How It Works
 
-## How it Works
+The program checks your password against five criteria:
 
-The program checks whether the password contains:
+- At least 8 characters
+- Contains an uppercase letter
+- Contains a lowercase letter
+- Contains a digit
+- Contains a special character
 
--   at least 8 characters
--   an uppercase letter
--   a lowercase letter
--   a digit
--   a special character
+Each condition met adds to the score. Final rating:
 
-Each satisfied condition increases the password's score.
+| Score | Strength |
+|-------|----------|
+| 0 – 2 | Weak     |
+| 3 – 4 | Moderate |
+| 5     | Strong   |
 
-Final classification:
+If something's missing, the program tells you exactly what to fix.
 
--   **0--2** → Weak\
--   **3--4** → Moderate\
--   **5** → Strong
-
-If the password is missing something (for example no uppercase letters
-or no digits), the program prints suggestions to improve it.
-
-------------------------------------------------------------------------
+---
 
 ## Example
 
+```
 Enter password: hello123
 
-Suggestions: - Add an uppercase character - Add a special character
--------------- Final Verdict: Password Strength: Moderate
+Suggestions:
+  - Add an uppercase letter
+  - Add a special character
 
-------------------------------------------------------------------------
+Password Strength: Moderate
+```
+
+---
 
 ## Project Structure
 
-PasswordChecker/ ├── Password.java └── Main.java
+```
+PasswordChecker/
+├── Password.java   # Password analysis — scoring, suggestions, verdict
+└── Main.java       # User input and program entry point
+```
 
-**Password.java**
+---
 
-Handles the actual password analysis: - scans characters - tracks
-password properties - calculates score - prints suggestions and verdict
+## Running It
 
-**Main.java**
+**Compile:**
+```bash
+javac PasswordChecker/*.java
+```
 
-Handles user input and runs the checker.
-
-------------------------------------------------------------------------
-
-## Why I Made This
-
-I wanted a small project to practice writing a complete Java program
-instead of just solving isolated exercises.
-
-This project helped me practice:
-
--   working with strings and characters
--   using loops and conditionals
--   basic object-oriented design
--   structuring a small CLI program
-
-------------------------------------------------------------------------
-
-## Running the Program
-
-Compile:
-
-javac PasswordChecker/\*.java
-
-Run:
-
+**Run:**
+```bash
 java PasswordChecker.Main
+```
 
-Then enter a password when prompted.
+Then type a password when prompted.
 
-------------------------------------------------------------------------
+---
+
+## Why I Built This
+
+I wanted a complete, end-to-end Java project rather than just isolated exercises. Working through this helped solidify:
+
+- String and character manipulation
+- Loops and conditionals in a real context
+- Basic object-oriented design
+- Structuring a small CLI program cleanly
+
+---
 
 ## Possible Improvements
 
-Some ideas I might explore later:
+Things I might explore later:
 
--   estimating password entropy
--   adding a password generator
--   building a simple GUI version
+- Entropy estimation
+- A password generator
+- A simple GUI version
