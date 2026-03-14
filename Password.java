@@ -1,7 +1,7 @@
 package PasswordChecker;
 
 public class Password {
-    private String name;
+    private String password;
     private boolean hasLower;
     private boolean hasUpper;
     private boolean hasSpecial;
@@ -9,7 +9,7 @@ public class Password {
     private int score;
 
     public Password(String pw) {
-        this.name = pw;
+        this.password = pw;
         this.hasInt = false;
         this.hasLower = false;
         this.hasSpecial = false;
@@ -18,7 +18,7 @@ public class Password {
     }
 
     public void checker() {
-        for (char c : name.toCharArray()) {
+        for (char c : password.toCharArray()) {
             if (Character.isUpperCase(c)) {
                 hasUpper = true;
             } else if (Character.isLowerCase(c)) {
@@ -35,7 +35,7 @@ public class Password {
         System.out.println("Suggestions:");
         boolean hasSuggestions = false;
 
-        if (name.length() >= 8) {
+        if (password.length() >= 8) {
             score++;
         } else {
             System.out.println("- Increase password length");
